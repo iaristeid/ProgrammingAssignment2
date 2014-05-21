@@ -1,6 +1,5 @@
-## Matrix inversion is a complex computation of high cost. Therefore
-## with the below functions one can create a cache object and 
-## then calculate its inverse
+## makeCacheMatrix: This function creates a special "matrix" object 
+## that can cache its inverse.
 
 ## This function is used to get, set a matrix object or its inverse 
 ## in cache
@@ -27,8 +26,10 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## This function inverts a matrix object. If the inverse is already
-## in cache, then it returns the cache value.
+## cacheSolve: This function computes the inverse of the special "matrix" 
+## returned by makeCacheMatrix above. 
+## If the inverse has already been calculated (and the matrix has not changed),
+## then the cachesolve should retrieve the inverse from the cache.
 
 ## Return a matrix that is the inverse of 'x'
 cacheSolve <- function(x, ...) {
